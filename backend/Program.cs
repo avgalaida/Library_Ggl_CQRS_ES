@@ -10,6 +10,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 builder.Services
+    .AddCors()
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
@@ -18,7 +19,13 @@ builder.Services
 
 var app = builder.Build();
 
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials());
+
 app.UseWebSockets();
-app.MapGraphQL("/api");
+app.MapGraphQL();
 
 app.Run();

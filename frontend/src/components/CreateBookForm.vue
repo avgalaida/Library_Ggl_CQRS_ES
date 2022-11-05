@@ -20,7 +20,7 @@ export default {
       await this.$apollo.mutate({
         mutation: gql`
           mutation ($delta: CreateBookEventInput!) {
-            createBook(bookEvent: $delta) {
+            createBook(eEvent: $delta) {
               id
             }
           }

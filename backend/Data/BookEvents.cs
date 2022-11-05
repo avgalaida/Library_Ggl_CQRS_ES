@@ -15,3 +15,13 @@ public class CreateBookEvent : BaseEvent
         return book;
     }
 }
+
+public class DeleteBookEvent : BaseEvent
+{
+    public Book ApplyOn(Book book)
+    {
+        book.Status = "Недоступна";
+
+        return book;
+    }
+}

@@ -23,6 +23,9 @@ public class BaseEvent
             case "CreateBookEvent": 
                 eEvent = JsonSerializer.Deserialize<CreateBookEvent>(Data);
                 break;
+            case "DeleteBookEvent":
+                eEvent = JsonSerializer.Deserialize<DeleteBookEvent>(Data);
+                break;
         }
         
         return eEvent.ApplyOn(aggregate);

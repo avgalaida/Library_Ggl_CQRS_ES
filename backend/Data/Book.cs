@@ -13,8 +13,9 @@ public class Book : BaseAggregate
         base.New();
     }
 
-    public void From(BaseAggregate a)
+    public Book(BaseAggregate a)
     {
+        base.New();
         this.Id = a.Id;
         this.LastRevision = a.LastRevision;
         this.CreatedAt = a.CreatedAt;

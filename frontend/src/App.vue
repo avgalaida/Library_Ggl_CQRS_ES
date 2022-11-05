@@ -1,10 +1,10 @@
 <template>
-  <div class="container py-5">
+  <div class="container">
     <div class="row mb-4">
       <h1 class="col-12" style="text-align: center">БИБЛИОТЕКА</h1>
     </div>
     <button class="createBtn" type="button" @click="showCreateDialog" style="font-size: 1rem;">Создать книгу</button>
-    <h4 style="padding: 20px 0; text-align: center;" >Список книг</h4>
+    <h2 style="padding: 20px 0; text-align: center;" >Список книг</h2>
     <my-dialog v-model="createDialogVisible"><create-book-form/></my-dialog>
     <book-list  class="col"/>
   </div>
@@ -27,16 +27,13 @@ export default {
     myDialog,
     createBookForm, 
   },
-
 }
 </script>
 
 <style>
 .container {
   color: darkslategrey;
-  font-family: Georgia;
-
-  max-width: 900px;
+  font-family: Garamond, serif;
 }
 .createBtn{
   background: mediumseagreen;

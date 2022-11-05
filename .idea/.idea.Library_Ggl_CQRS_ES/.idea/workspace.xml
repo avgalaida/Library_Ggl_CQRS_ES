@@ -11,13 +11,11 @@
     <projectFile profileName="gateway">gateway/gateway.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477330b2-9f15-4aee-8b0c-32f0efa10482" name="Changes" comment="stable 0.4">
+    <list default="true" id="477330b2-9f15-4aee-8b0c-32f0efa10482" name="Changes" comment="create delete sub/mut">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Library_Ggl_CQRS_ES/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Library_Ggl_CQRS_ES/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Data/BaseEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Data/BaseEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Data/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Data/Book.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Data/BookEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Data/BookEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Graphql/Mutation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Graphql/Mutation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Graphql/Query.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Graphql/Query.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Graphql/Subscription.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Graphql/Subscription.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.pdb" afterDir="false" />
@@ -26,13 +24,8 @@
       <change beforePath="$PROJECT_DIR$/backend/obj/Debug/net6.0/ref/backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/backend/obj/Debug/net6.0/ref/backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/obj/Debug/net6.0/refint/backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/backend/obj/Debug/net6.0/refint/backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/backend/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ApolloExample.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Book.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Book.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/BookList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/BookList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CreateBookForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CreateBookForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +104,7 @@
       <updated>1667527932378</updated>
       <workItem from="1667527937697" duration="21094000" />
       <workItem from="1667606777523" duration="23339000" />
-      <workItem from="1667640756408" duration="18234000" />
+      <workItem from="1667640756408" duration="19530000" />
     </task>
     <task id="LOCAL-00001" summary="фронт получает ответ с сервера">
       <created>1667535682324</created>
@@ -141,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667670790052</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="create delete sub/mut">
+      <created>1667685785670</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667685785670</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +166,8 @@
     <MESSAGE value="stable createBookEvent" />
     <MESSAGE value="stable createBook mutation" />
     <MESSAGE value="stable 0.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="stable 0.4" />
+    <MESSAGE value="create delete sub/mut" />
+    <option name="LAST_COMMIT_MESSAGE" value="create delete sub/mut" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

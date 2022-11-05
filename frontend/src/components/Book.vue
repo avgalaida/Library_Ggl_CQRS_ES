@@ -62,7 +62,21 @@ export default {
       });
     },
     async restoreBook(){
-      // this.$store.dispatch('restoreBook', {id: this.id, status: "Доступна"});
+      await this.$apollo.mutate({
+        mutation: gql`
+          mutation ($eventData: RestoreBookEventInput!) {
+            restoreBook(eEvent: $eventData) {
+              id
+            }
+          }
+        `,
+        variables: {
+          eventData: {
+            aggregateId: this.id,
+            status: "Доступна"
+          }
+        }
+      });
     },
     showChangeDialog(){this.changeDialogVisible = true;},
     showRollbackDialog(){this.bookRollbackDialogVisible = true;}

@@ -25,6 +25,9 @@ public class BaseEvent
                 break;
             case "DeleteBookEvent":
                 eEvent = JsonSerializer.Deserialize<DeleteBookEvent>(Data);
+                break; 
+            case "RestoreBookEvent":
+                eEvent = JsonSerializer.Deserialize<RestoreBookEvent>(Data);
                 break;
         }
         

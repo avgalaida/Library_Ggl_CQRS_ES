@@ -25,3 +25,14 @@ public class DeleteBookEvent : BaseEvent
         return book;
     }
 }
+
+public class RestoreBookEvent : BaseEvent
+{
+    public string? Status { get; set; }
+    public Book ApplyOn(Book book)
+    {
+        book.Status = this.Status;
+
+        return book;
+    }
+}

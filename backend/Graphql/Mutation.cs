@@ -10,6 +10,7 @@ public class Mutation
         [Service] ITopicEventSender sender, CreateBookEvent eEvent)
     {
         var book = new Book();
+        
         eEvent.Register(book, eEvent);
         
         book = eEvent.ApplyOn(book);
@@ -33,6 +34,21 @@ public class Mutation
         await InsertEvent(context, eEvent);
             
         await sender.SendAsync(nameof(Subscription.OnBookDeleted), eEvent);
+
+        return book;
+    }
+    
+    public async Task<Book> RestoreBook([Service] AppDbContext context, 
+        [Service] ITopicEventSender sender, RestoreBookEvent eEvent )
+    {
+        var book = new Book(await GetAggregate(context, eEvent.AggregateId));
+        
+        eEvent.Register(book, eEvent);
+
+        await UpgradeAggregateLastRevision(context, book.Id);
+        await InsertEvent(context, eEvent);
+            
+        await sender.SendAsync(nameof(Subscription.OnBookRestored), eEvent);
 
         return book;
     }

@@ -6,10 +6,12 @@ public class CreateBookEvent : BaseEvent
     public string? Title { get; set; }
     public string? Authors { get; set; }
 
-    public void ApplyTo(ref Book book)
+    public Book ApplyOn(Book book)
     {
         book.Status = this.Status;
         book.Title = this.Title;
         book.Authors = this.Authors;
+        
+        return book;
     }
 }

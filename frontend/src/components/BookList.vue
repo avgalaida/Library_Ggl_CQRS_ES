@@ -17,13 +17,14 @@ import bookItem from "@/components/Book"
 export default {
   apollo: {
     books: gql`
-      query: {
+      query {
         books {
           id
           status
           title
           authors
           createdAt
+          lastRevision
         }
       }
     `

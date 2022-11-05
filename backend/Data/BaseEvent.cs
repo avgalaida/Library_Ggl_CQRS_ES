@@ -13,11 +13,22 @@ public class BaseEvent
     public string? EventType { get; set; }
     public  string? UserId { get; set; }
     
-    public void ApplyTo(ref BaseAggregate aggregate)
+    public dynamic ApplyTo(dynamic aggregate)
     {
+        
+        dynamic eEvent = null;
+
+        switch (EventType)
+        {
+            case "CreateBookEvent": 
+                eEvent = JsonSerializer.Deserialize<CreateBookEvent>(Data);
+                break;
+        }
+        
+        return eEvent.ApplyOn(aggregate);
     }
 
-    public void Register(BaseAggregate aggregate, BaseEvent eEvent)
+    public void Register(BaseAggregate aggregate, dynamic eEvent)
     {
         this.Id = Guid.NewGuid().ToString();
         this.AggregateId = aggregate.Id;

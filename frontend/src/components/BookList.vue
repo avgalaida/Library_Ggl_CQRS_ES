@@ -1,0 +1,36 @@
+<template>
+  <div>
+    <transition-group name="book-list">
+      <book-item
+          v-for="book in books"
+          :key="book.createdAt"
+          :book="book"
+      />
+    </transition-group>
+  </div>
+</template>
+
+<script>
+import gql from 'graphql-tag'
+import bookItem from "@/components/Book"
+
+export default {
+  apollo: {
+    books: gql`
+      query: {
+        books {
+          id
+          status
+          title
+          authors
+          createdAt
+        }
+      }
+    `
+  },
+  components: {bookItem}
+}
+</script>
+
+<style scoped>
+</style>

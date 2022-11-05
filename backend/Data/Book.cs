@@ -1,9 +1,15 @@
-﻿namespace backend.Data;
+﻿using System.Globalization;
 
-public class Book
+namespace backend.Data;
+
+public class Book : BaseAggregate
 {
-    public int Id { get; set; }
     public string? Status { get; set; }
     public string? Title { get; set; }
     public string? Authors { get; set; }
+
+    public Book()
+    {
+        base.New();
+    }
 }

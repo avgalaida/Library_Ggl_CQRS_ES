@@ -5,8 +5,8 @@ namespace backend.Graphql;
 
 public class Query
 {
-    public async Task<List<Book>> AllBookAsync([Service] AppDbContext context)
+    public async Task<List<BaseAggregate>> Aggregates([Service] AppDbContext context)
     {
-        return await context.Book.ToListAsync();
+        return await context.BaseAggregate.ToListAsync();
     }
 }

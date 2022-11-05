@@ -11,12 +11,10 @@
     <projectFile profileName="gateway">gateway/gateway.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477330b2-9f15-4aee-8b0c-32f0efa10482" name="Changes" comment="stable createBookEvent">
-      <change beforePath="$PROJECT_DIR$/backend/Data/BaseEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Data/BaseEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Data/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Data/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Data/BookEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Data/BookEvents.cs" afterDir="false" />
+    <list default="true" id="477330b2-9f15-4aee-8b0c-32f0efa10482" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Library_Ggl_CQRS_ES/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Library_Ggl_CQRS_ES/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Data/BaseAggregate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Data/BaseAggregate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Graphql/Mutation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Graphql/Mutation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Graphql/Query.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Graphql/Query.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/Debug/net6.0/backend.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/obj/Debug/net6.0/backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/backend/obj/Debug/net6.0/backend.dll" afterDir="false" />
@@ -24,9 +22,14 @@
       <change beforePath="$PROJECT_DIR$/backend/obj/Debug/net6.0/ref/backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/backend/obj/Debug/net6.0/ref/backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/obj/Debug/net6.0/refint/backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/backend/obj/Debug/net6.0/refint/backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/backend/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Book.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Book.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/logo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/BookList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/BookList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TestGraphql.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,18 +54,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Inspections-C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Inspections-C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.backend">
     <configuration name="backend" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/backend/backend.csproj" />
@@ -103,7 +106,8 @@
       <option name="presentableId" value="Default" />
       <updated>1667527932378</updated>
       <workItem from="1667527937697" duration="21094000" />
-      <workItem from="1667606777523" duration="17536000" />
+      <workItem from="1667606777523" duration="23339000" />
+      <workItem from="1667640756408" duration="4097000" />
     </task>
     <task id="LOCAL-00001" summary="фронт получает ответ с сервера">
       <created>1667535682324</created>
@@ -119,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667613254023</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="stable createBook mutation">
+      <created>1667628453056</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667628453056</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +153,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="фронт получает ответ с сервера" />
     <MESSAGE value="stable createBookEvent" />
-    <option name="LAST_COMMIT_MESSAGE" value="stable createBookEvent" />
+    <MESSAGE value="stable createBook mutation" />
+    <option name="LAST_COMMIT_MESSAGE" value="stable createBook mutation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

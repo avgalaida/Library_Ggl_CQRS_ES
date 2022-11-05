@@ -21,7 +21,7 @@ public class Mutation
     private async Task<BaseAggregate> InsertAggregate([Service] AppDbContext context, BaseAggregate aggregate)
     {
         context.BaseAggregate.Add(aggregate);
-        await context.SaveChangesAsync();
+        await context.SaveChangesAsync();   
         return aggregate;
     }
 

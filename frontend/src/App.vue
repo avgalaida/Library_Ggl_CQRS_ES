@@ -26,7 +26,8 @@ export default {
     bookList,
     myDialog,
     createBookForm, 
-  }
+  },
+
 }
 </script>
 

@@ -8,7 +8,7 @@ public class BaseAggregate
     public int LastRevision { get; set; }
     public string? CreatedAt { get; set; }
     
-    public void New()
+    protected void New()
     {
         this.Id = Guid.NewGuid().ToString();
         this.LastRevision = 1;

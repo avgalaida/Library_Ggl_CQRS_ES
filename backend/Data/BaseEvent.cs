@@ -1,5 +1,8 @@
-﻿using System.Globalization;
+﻿using System.CodeDom.Compiler;
+using System.Globalization;
+using System.Reflection;
 using System.Text.Json;
+using Microsoft.CSharp;
 
 namespace backend.Data;
 
@@ -15,12 +18,10 @@ public class BaseEvent
     
     public dynamic ApplyTo(dynamic aggregate)
     {
-        
         dynamic eEvent = null;
-
         switch (EventType)
         {
-            case "CreateBookEvent": 
+            case "CreateBookEvent":
                 eEvent = JsonSerializer.Deserialize<CreateBookEvent>(Data);
                 break;
             case "DeleteBookEvent":
@@ -29,8 +30,13 @@ public class BaseEvent
             case "RestoreBookEvent":
                 eEvent = JsonSerializer.Deserialize<RestoreBookEvent>(Data);
                 break;
+            case "ChangeBookTitleEvent":
+                eEvent = JsonSerializer.Deserialize<ChangeBookTitleEvent>(Data);
+                break;
+            case "ChangeBookAuthorsEvent":
+                eEvent = JsonSerializer.Deserialize<ChangeBookAuthorsEvent>(Data);
+                break;
         }
-        
         return eEvent.ApplyOn(aggregate);
     }
 
@@ -43,5 +49,5 @@ public class BaseEvent
         this.Data = JsonSerializer.Serialize(eEvent);
         this.EventType = eEvent.GetType().Name;
         this.UserId = "TODO";
-    } 
+    }
 }

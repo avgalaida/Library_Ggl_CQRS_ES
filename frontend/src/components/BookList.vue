@@ -79,36 +79,36 @@ export default {
           this.books.at(i).lastRevision++;
         }
       },
-    //   onBookTitleChanged: {
-    //     query: gql`
-    //       subscription {
-    //         onBookTitleChanged {
-    //           aggregateId
-    //           title
-    //         }
-    //       }
-    //     `,
-    //     result (data) {
-    //       let i = this.findIndex(data.data.onBookDeleted.aggregateId)
-    //       this.books.at(i).title = data.data.onBookDeleted.title;
-    //       this.books.at(i).lastRevision++;
-    //     }
-    //   },
-    //   onBookAuthorsChanged: {
-    //     query: gql`
-    //       subscription {
-    //         onBookAuthorsChanged {
-    //           aggregateId
-    //           authors
-    //         }
-    //       }
-    //     `,
-    //     result (data) {
-    //       let i = this.findIndex(data.data.onBookDeleted.aggregateId)
-    //       this.books.at(i).authors = data.data.onBookDeleted.authors;
-    //       this.books.at(i).lastRevision++;
-    //     }
-    //   },
+      onBookTitleChanged: {
+        query: gql`
+          subscription {
+            onBookTitleChanged {
+              aggregateId
+              title
+            }
+          }
+        `,
+        result (data) {
+          let i = this.findIndex(data.data.onBookTitleChanged.aggregateId)
+          this.books.at(i).title = data.data.onBookTitleChanged.title;
+          this.books.at(i).lastRevision++;
+        }
+      },
+      onBookAuthorsChanged: {
+        query: gql`
+          subscription {
+            onBookAuthorsChanged {
+              aggregateId
+              authors
+            }
+          }
+        `,
+        result (data) {
+          let i = this.findIndex(data.data.onBookAuthorsChanged.aggregateId)
+          this.books.at(i).authors = data.data.onBookAuthorsChanged.authors;
+          this.books.at(i).lastRevision++;
+        }
+      },
     //   onBookRollbacked: {
     //     query: gql`
     //       subscription {
@@ -121,10 +121,10 @@ export default {
     //       }
     //     `,
     //     result (data) {
-    //       let i = this.findIndex(data.data.onBookDeleted.aggregateId)
-    //       this.books.at(i).status = data.data.onBookDeleted.status;
-    //       this.books.at(i).title = data.data.onBookDeleted.title;
-    //       this.books.at(i).authors = data.data.onBookDeleted.authors;
+    //       let i = this.findIndex(data.data.onBookRollbacked.aggregateId)
+    //       this.books.at(i).status = data.data.onBookRollbacked.status;
+    //       this.books.at(i).title = data.data.onBookRollbacked.title;
+    //       this.books.at(i).authors = data.data.onBookRollbacked.authors;
     //       this.books.at(i).lastRevision++;
     //     }
     //   }

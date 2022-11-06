@@ -12,4 +12,11 @@ public class Subscription
     
     [Subscribe]
     public RestoreBookEvent OnBookRestored([EventMessage] RestoreBookEvent delta) => delta;
+    
+    [Subscribe]
+    public ChangeBookTitleEvent OnBookTitleChanged([EventMessage] ChangeBookTitleEvent delta) => delta;
+    
+    [Subscribe]
+    public ChangeBookAuthorsEvent OnBookAuthorsChanged([EventMessage] ChangeBookAuthorsEvent delta) => delta;
+    
 }

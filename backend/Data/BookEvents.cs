@@ -36,3 +36,25 @@ public class RestoreBookEvent : BaseEvent
         return book;
     }
 }
+
+public class ChangeBookTitleEvent : BaseEvent
+{
+    public string? Title { get; set; }
+    public Book ApplyOn(Book book)
+    {
+        book.Title = this.Title;
+
+        return book;
+    }
+}
+
+public class ChangeBookAuthorsEvent : BaseEvent
+{
+    public string? Authors { get; set; }
+    public Book ApplyOn(Book book)
+    {
+        book.Authors = this.Authors;
+
+        return book;
+    }
+}

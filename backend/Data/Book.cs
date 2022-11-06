@@ -19,5 +19,5 @@ public class Book : BaseAggregate
         this.Id = a.Id;
         this.LastRevision = a.LastRevision;
         this.CreatedAt = a.CreatedAt;
-    }
+    }   
 }

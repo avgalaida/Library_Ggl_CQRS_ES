@@ -10,7 +10,8 @@
         "dependencies": {
           "HotChocolate.AspNetCore": "12.15.1",
           "Microsoft.EntityFrameworkCore": "7.0.0-rc.2.22472.11",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.0-rc.2"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.0-rc.2",
+          "System.CodeDom": "7.0.0-rc.2.22472.3"
         },
         "runtime": {
           "backend.dll": {}
@@ -462,6 +463,14 @@
           }
         }
       },
+      "System.CodeDom/7.0.0-rc.2.22472.3": {
+        "runtime": {
+          "lib/net6.0/System.CodeDom.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        }
+      },
       "System.Collections.Immutable/1.7.0": {},
       "System.ComponentModel.Annotations/4.7.0": {},
       "System.Diagnostics.DiagnosticSource/4.7.1": {},
@@ -750,6 +759,13 @@
       "sha512": "sha512-p70FRAM5/Qbq3IIvrxXVrt3PmOVt5IQ73rcZljoDe4Quxh7eXSETONb79huRaL3MAHzIm8fnjwA+2VPdvtA8Tg==",
       "path": "npgsql.entityframeworkcore.postgresql/7.0.0-rc.2",
       "hashPath": "npgsql.entityframeworkcore.postgresql.7.0.0-rc.2.nupkg.sha512"
+    },
+    "System.CodeDom/7.0.0-rc.2.22472.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iNxzkVPFtIfhPQCevNLhUcRQsmkvvvI4NpTLmkkkP7qpfKkMQlqoVonW560oBrKfXh8vLRTAUFwS1Gm+fGQSug==",
+      "path": "system.codedom/7.0.0-rc.2.22472.3",
+      "hashPath": "system.codedom.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
     "System.Collections.Immutable/1.7.0": {
       "type": "package",

@@ -52,6 +52,36 @@ public class Mutation
 
         return book;
     }
+    
+    public async Task<Book> ChangeBookTitle([Service] AppDbContext context, 
+        [Service] ITopicEventSender sender, ChangeBookTitleEvent eEvent )
+    {
+        var book = new Book(await GetAggregate(context, eEvent.AggregateId));
+        
+        eEvent.Register(book, eEvent);
+
+        await UpgradeAggregateLastRevision(context, book.Id);
+        await InsertEvent(context, eEvent);
+            
+        await sender.SendAsync(nameof(Subscription.OnBookTitleChanged), eEvent);
+
+        return book;
+    }
+    
+    public async Task<Book> ChangeBookAuthors([Service] AppDbContext context, 
+        [Service] ITopicEventSender sender, ChangeBookAuthorsEvent eEvent )
+    {
+        var book = new Book(await GetAggregate(context, eEvent.AggregateId));
+        
+        eEvent.Register(book, eEvent);
+
+        await UpgradeAggregateLastRevision(context, book.Id);
+        await InsertEvent(context, eEvent);
+            
+        await sender.SendAsync(nameof(Subscription.OnBookAuthorsChanged), eEvent);
+
+        return book;
+    }
     private static async Task<BaseAggregate> InsertAggregate([Service] AppDbContext context, BaseAggregate aggregate)
     {
         context.BaseAggregate.Add(aggregate);

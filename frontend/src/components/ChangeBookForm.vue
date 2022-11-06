@@ -9,6 +9,7 @@
 
 <script>
 import myInput from "@/components/UI/MyInput";
+import gql from "graphql-tag";
 
 export default {
   data() {
@@ -21,18 +22,40 @@ export default {
     id() {return this.book.id}
   },
   methods: {
-    changeBook(){
+    async changeBook(){
       if (this.bookTitle !== this.newBookTitle) {
-        // this.$store.dispatch('changeTitle', {
-        //   id: this.id,
-        //   title: this.newBookTitle,
-        // });
+        await this.$apollo.mutate({
+          mutation: gql`
+          mutation ($eventData: ChangeBookTitleEventInput!) {
+            changeBookTitle(eEvent: $eventData) {
+              id
+            }
+          }
+        `,
+          variables: {
+            eventData: {
+              aggregateId: this.id,
+              title: this.newBookTitle
+            }
+          }
+        });
       }
       if (this.bookAuthors !== this.newBookAuthors) {
-        // this.$store.dispatch('changeAuthors', {
-        //   id: this.id,
-        //   authors: this.newBookAuthors,
-        // });
+        await this.$apollo.mutate({
+          mutation: gql`
+          mutation ($eventData: ChangeBookAuthorsEventInput!) {
+            changeBookAuthors(eEvent: $eventData) {
+              id
+            }
+          }
+        `,
+          variables: {
+            eventData: {
+              aggregateId: this.id,
+              authors: this.newBookAuthors
+            }
+          }
+        });
       }
     }
   },

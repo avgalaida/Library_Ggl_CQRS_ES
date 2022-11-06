@@ -20,8 +20,9 @@
       <div><strong>Авторы:</strong> {{authors}}</div>
       <div><strong>Ревизия:</strong> {{lastRevision}}</div>
     </div>
+    <my-dialog v-model="bookRollbackDialogVisible"><book-rollback-form :book="this.book"/></my-dialog>
     <div class="book__btn">
-      <button class="restoreBtn" @click="showRollbackDialog" type="button" style="margin-right: 10px;">Откат</button>
+      <button class="restoreBtn" @click="showRollbackDialog" style="margin-right: 10px;">Откат</button>
       <button class="restoreBtn" @click="restoreBook">Восстановить</button>
     </div>
   </div>

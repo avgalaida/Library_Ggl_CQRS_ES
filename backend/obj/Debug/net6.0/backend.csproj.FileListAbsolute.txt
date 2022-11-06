@@ -56,3 +56,4 @@ C:\Users\Alexandr\RiderProjects\Library_Ggl_CQRS_ES\backend\obj\Debug\net6.0\ref
 C:\Users\Alexandr\RiderProjects\Library_Ggl_CQRS_ES\backend\obj\Debug\net6.0\backend.pdb
 C:\Users\Alexandr\RiderProjects\Library_Ggl_CQRS_ES\backend\obj\Debug\net6.0\backend.genruntimeconfig.cache
 C:\Users\Alexandr\RiderProjects\Library_Ggl_CQRS_ES\backend\obj\Debug\net6.0\ref\backend.dll
+C:\Users\Alexandr\RiderProjects\Library_Ggl_CQRS_ES\backend\bin\Debug\net6.0\System.CodeDom.dll

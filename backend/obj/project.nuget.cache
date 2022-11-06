@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YEmBaOiD+uNuO/fexfDFNLM0m1qREnDkQtRZ/5FztkfGJ06qLXfd9n4jjM5sCRKLaFAa03n2iaAtETQyshpb2A==",
+  "dgSpecHash": "ziqEcWdYolxXEqHOkf1tVR29rjXSkQgz5XEn9dYpkWJJSYsLqUCwnzCWqpIeDfABs0cDY4O1ofpMotGb0ixb4g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alexandr\\RiderProjects\\Library_Ggl_CQRS_ES\\backend\\backend.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\Alexandr\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Alexandr\\.nuget\\packages\\npgsql\\7.0.0-rc.2\\npgsql.7.0.0-rc.2.nupkg.sha512",
     "C:\\Users\\Alexandr\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.0-rc.2\\npgsql.entityframeworkcore.postgresql.7.0.0-rc.2.nupkg.sha512",
+    "C:\\Users\\Alexandr\\.nuget\\packages\\system.codedom\\7.0.0-rc.2.22472.3\\system.codedom.7.0.0-rc.2.22472.3.nupkg.sha512",
     "C:\\Users\\Alexandr\\.nuget\\packages\\system.collections.immutable\\1.7.0\\system.collections.immutable.1.7.0.nupkg.sha512",
     "C:\\Users\\Alexandr\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\Alexandr\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",

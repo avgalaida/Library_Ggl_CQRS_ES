@@ -5,6 +5,21 @@ namespace backend.Graphql;
 
 public class Query
 {
+    public async Task<Book> GetBookWithRevision([Service] AppDbContext context, string id, int revision)
+    {
+        var bookBase = await context.BaseAggregate.FirstOrDefaultAsync(a => a.Id == id);
+        var book = new Book(bookBase);
+        book.LastRevision = 0;
+        
+        var events = context.BaseEvent.Where(e => e.AggregateId == book.Id && e.Revision < revision);
+        foreach (var eEvent in events)
+        {
+            eEvent.ApplyTo(book);
+            book.LastRevision++;
+        }
+
+        return book;
+    }
     public async Task<List<Book>> GetBooks([Service] AppDbContext context)
     {
         var aggregates = await GetAggregates(context);

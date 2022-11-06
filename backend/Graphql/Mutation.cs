@@ -16,6 +16,7 @@ public class Mutation
         book = eEvent.ApplyOn(book);
 
         await InsertAggregate(context, book);
+        await UpgradeAggregateLastRevision(context, book.Id);
         await InsertEvent(context, eEvent);
         
         await sender.SendAsync(nameof(Subscription.OnBookCreated), book);
@@ -79,6 +80,21 @@ public class Mutation
         await InsertEvent(context, eEvent);
             
         await sender.SendAsync(nameof(Subscription.OnBookAuthorsChanged), eEvent);
+
+        return book;
+    }
+    
+    public async Task<Book> RollbackBook([Service] AppDbContext context, 
+        [Service] ITopicEventSender sender, RollbackBookEvent eEvent )
+    {
+        var book = new Book(await GetAggregate(context, eEvent.AggregateId));
+        
+        eEvent.Register(book, eEvent);
+
+        await UpgradeAggregateLastRevision(context, book.Id);
+        await InsertEvent(context, eEvent);
+            
+        await sender.SendAsync(nameof(Subscription.OnBookRollbacked), eEvent);
 
         return book;
     }

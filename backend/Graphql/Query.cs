@@ -9,13 +9,12 @@ public class Query
     {
         var bookBase = await context.BaseAggregate.FirstOrDefaultAsync(a => a.Id == id);
         var book = new Book(bookBase);
-        book.LastRevision = 0;
+        book.LastRevision = revision;
         
         var events = context.BaseEvent.Where(e => e.AggregateId == book.Id && e.Revision < revision);
         foreach (var eEvent in events)
         {
-            eEvent.ApplyTo(book);
-            book.LastRevision++;
+            book = eEvent.ApplyTo(book);
         }
 
         return book;

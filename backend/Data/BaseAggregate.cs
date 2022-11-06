@@ -11,7 +11,7 @@ public class BaseAggregate
     protected void New()
     {
         this.Id = Guid.NewGuid().ToString();
-        this.LastRevision = 1;
+        this.LastRevision = 0;
         this.CreatedAt = DateTime.Now.ToString(CultureInfo.GetCultureInfo("ru-RU"));
     }
 }

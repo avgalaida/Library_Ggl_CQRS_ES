@@ -109,25 +109,25 @@ export default {
           this.books.at(i).lastRevision++;
         }
       },
-    //   onBookRollbacked: {
-    //     query: gql`
-    //       subscription {
-    //         onBookRollbacked {
-    //           aggregateId
-    //           status
-    //           title
-    //           authors
-    //         }
-    //       }
-    //     `,
-    //     result (data) {
-    //       let i = this.findIndex(data.data.onBookRollbacked.aggregateId)
-    //       this.books.at(i).status = data.data.onBookRollbacked.status;
-    //       this.books.at(i).title = data.data.onBookRollbacked.title;
-    //       this.books.at(i).authors = data.data.onBookRollbacked.authors;
-    //       this.books.at(i).lastRevision++;
-    //     }
-    //   }
+      onBookRollbacked: {
+        query: gql`
+          subscription {
+            onBookRollbacked {
+              aggregateId
+              status
+              title
+              authors
+            }
+          }
+        `,
+        result (data) {
+          let i = this.findIndex(data.data.onBookRollbacked.aggregateId)
+          this.books.at(i).status = data.data.onBookRollbacked.status;
+          this.books.at(i).title = data.data.onBookRollbacked.title;
+          this.books.at(i).authors = data.data.onBookRollbacked.authors;
+          this.books.at(i).lastRevision++;
+        }
+      }
     }
   },
   methods: {
@@ -144,16 +144,6 @@ export default {
   },
   components: {bookItem},
 }
-// function findIndex(id) {
-//   let index; let i;
-//   for (i = 0;i < this.books.length; ++i) {
-//     if (this.books.at(i).id === id) {
-//       index = i;
-//       break;
-//     }
-//   }
-//   return index;
-// }
 </script>
 
 

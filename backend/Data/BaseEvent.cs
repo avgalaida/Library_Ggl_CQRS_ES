@@ -36,6 +36,9 @@ public class BaseEvent
             case "ChangeBookAuthorsEvent":
                 eEvent = JsonSerializer.Deserialize<ChangeBookAuthorsEvent>(Data);
                 break;
+            case "RollbackBookEvent":
+                eEvent = JsonSerializer.Deserialize<RollbackBookEvent>(Data);
+                break;
         }
         return eEvent.ApplyOn(aggregate);
     }

@@ -17,6 +17,9 @@ public class Subscription
     public ChangeBookTitleEvent OnBookTitleChanged([EventMessage] ChangeBookTitleEvent delta) => delta;
     
     [Subscribe]
-    public ChangeBookAuthorsEvent OnBookAuthorsChanged([EventMessage] ChangeBookAuthorsEvent delta) => delta;
+    public ChangeBookAuthorsEvent OnBookAuthorsChanged([EventMessage] ChangeBookAuthorsEvent delta) => delta;    
+   
+    [Subscribe]
+    public RollbackBookEvent OnBookRollbacked([EventMessage] RollbackBookEvent delta) => delta;
     
 }

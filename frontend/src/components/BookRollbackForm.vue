@@ -74,14 +74,31 @@ export default {
          this.numeric++
        }
     },
-    rollbackBook() {
+    async rollbackBook() {
+      await this.$apollo.mutate({
+        mutation: gql`
+          mutation ($delta: RollbackBookEventInput!) {
+            rollbackBook(eEvent: $delta) {
+              id
+            }
+          }
+        `,
+        variables: {
+          delta: {
+            aggregateId: this.book.id,
+            status: this.bookWithRevision[0].status,
+            title:  this.bookWithRevision[0].title ,
+            authors: this.bookWithRevision[0].authors
+          }
+        }
+      });
+    }
       // this.$store.dispatch('rollbackBook', {
       //   id: this.id,
       //   title: this.newTitle,
       //   authors: this.newAuthors,
       //   status: this.newStatus
       // });
-    },
   },
   mounted() {
     this.bookWithRevision.at(0).title = this.book.title

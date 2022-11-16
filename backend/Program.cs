@@ -1,20 +1,26 @@
-using backend.Data;
+using backend.Repository;
 using backend.Graphql;
+using backend.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options =>
+var context = builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("lib"));
 });
 
+builder.Services.AddScoped<BookService,BookService>();
+builder.Services.AddTransient<BookEventPublisher,BookEventPublisher>();
+builder.Services.AddScoped<BookMutation, BookMutation>();
+builder.Services.AddScoped<BookQuery, BookQuery>();
+
 builder.Services
     .AddCors()
     .AddGraphQLServer()
-    .AddQueryType<Query>()
-    .AddMutationType<Mutation>()
-    .AddSubscriptionType<Subscription>()
+    .AddQueryType<BookQuery>()
+    .AddMutationType<BookMutation>()
+    .AddSubscriptionType<BookSubscription>()
     .AddInMemorySubscriptions();
 
 var app = builder.Build();

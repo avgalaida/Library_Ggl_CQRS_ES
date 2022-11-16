@@ -27,7 +27,7 @@ export default {
         await this.$apollo.mutate({
           mutation: gql`
           mutation ($eventData: ChangeBookTitleEventInput!) {
-            changeBookTitle(eEvent: $eventData) {
+            changeBookTitle(request: $eventData) {
               id
             }
           }
@@ -44,7 +44,7 @@ export default {
         await this.$apollo.mutate({
           mutation: gql`
           mutation ($eventData: ChangeBookAuthorsEventInput!) {
-            changeBookAuthors(eEvent: $eventData) {
+            changeBookAuthors(request: $eventData) {
               id
             }
           }

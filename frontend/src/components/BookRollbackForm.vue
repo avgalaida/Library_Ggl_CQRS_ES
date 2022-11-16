@@ -78,7 +78,7 @@ export default {
       await this.$apollo.mutate({
         mutation: gql`
           mutation ($delta: RollbackBookEventInput!) {
-            rollbackBook(eEvent: $delta) {
+            rollbackBook(request: $delta) {
               id
             }
           }

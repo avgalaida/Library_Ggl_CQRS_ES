@@ -54,12 +54,12 @@ export default {
         query: gql`
           subscription {
             onBookDeleted {
-              aggregateId
+              id
             }
           }
         `,
         result (data) {
-          let i = this.findIndex(data.data.onBookDeleted.aggregateId)
+          let i = this.findIndex(data.data.onBookDeleted.id)
           this.books.at(i).status = "Недоступна";
           this.books.at(i).lastRevision++;
         }
@@ -68,13 +68,13 @@ export default {
         query: gql`
           subscription {
             onBookRestored {
-              aggregateId
+              id
               status
             }
           }
         `,
         result (data) {
-          let i = this.findIndex(data.data.onBookRestored.aggregateId)
+          let i = this.findIndex(data.data.onBookRestored.id)
           this.books.at(i).status = data.data.onBookRestored.status;
           this.books.at(i).lastRevision++;
         }
@@ -83,13 +83,13 @@ export default {
         query: gql`
           subscription {
             onBookTitleChanged {
-              aggregateId
+              id
               title
             }
           }
         `,
         result (data) {
-          let i = this.findIndex(data.data.onBookTitleChanged.aggregateId)
+          let i = this.findIndex(data.data.onBookTitleChanged.id)
           this.books.at(i).title = data.data.onBookTitleChanged.title;
           this.books.at(i).lastRevision++;
         }
@@ -98,13 +98,13 @@ export default {
         query: gql`
           subscription {
             onBookAuthorsChanged {
-              aggregateId
+              id
               authors
             }
           }
         `,
         result (data) {
-          let i = this.findIndex(data.data.onBookAuthorsChanged.aggregateId)
+          let i = this.findIndex(data.data.onBookAuthorsChanged.id)
           this.books.at(i).authors = data.data.onBookAuthorsChanged.authors;
           this.books.at(i).lastRevision++;
         }
@@ -113,7 +113,7 @@ export default {
         query: gql`
           subscription {
             onBookRollbacked {
-              aggregateId
+              id
               status
               title
               authors
@@ -121,7 +121,7 @@ export default {
           }
         `,
         result (data) {
-          let i = this.findIndex(data.data.onBookRollbacked.aggregateId)
+          let i = this.findIndex(data.data.onBookRollbacked.id)
           this.books.at(i).status = data.data.onBookRollbacked.status;
           this.books.at(i).title = data.data.onBookRollbacked.title;
           this.books.at(i).authors = data.data.onBookRollbacked.authors;

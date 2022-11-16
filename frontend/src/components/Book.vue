@@ -1,5 +1,5 @@
 <template>
-  <div v-if="status === 'Доступна'" class="book" @submit.prevent>
+  <div v-if="status !== 'Недоступна'" class="book" @submit.prevent>
     <div>
       <div><strong>Название:</strong> {{title}}</div>
       <div><strong>Авторы:</strong> {{authors}}</div>
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div v-else-if="status === 'Недоступна'" class="deletedBook" @submit.prevent>
+  <div v-else class="deletedBook" @submit.prevent>
     <div>
       <div><strong>Название:</strong> {{title}}</div>
       <div><strong>Авторы:</strong> {{authors}}</div>
@@ -66,7 +66,7 @@ export default {
       await this.$apollo.mutate({
         mutation: gql`
           mutation ($eventData: RestoreBookEventInput!) {
-            restoreBook(eEvent: $eventData) {
+            restoreBook(request: $eventData) {
               id
             }
           }

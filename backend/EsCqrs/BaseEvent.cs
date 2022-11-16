@@ -21,7 +21,7 @@ public class BaseEvent
         this.CreatedAt = DateTime.Now.ToString(CultureInfo.GetCultureInfo("ru-RU"));
         this.Revision = aggregate.LastRevision;
         this.Data = JsonSerializer.Serialize(eEvent);
-        this.EventType = eEvent.GetType().Name;
+        this.EventType = eEvent.GetType().ToString();
         this.UserId = "TODO";
     }
 }
